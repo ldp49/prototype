@@ -10,6 +10,9 @@ class InsurersController < ApplicationController
   # GET /insurers/1
   # GET /insurers/1.json
   def show
+    @insurer = Insurer.find(params[:id])
+    insurer_id = @insurer.id 
+    @messages = Message.where(["receiver_id = ?", insurer_id])
   end
 
   # GET /insurers/new

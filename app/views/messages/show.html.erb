@@ -1,0 +1,157 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Authnum:</strong>
+  <%= @message.authnum %>
+</p>
+
+<p>
+  <strong>Firstnamepatient:</strong>
+  <%= @message.firstnamepatient %>
+</p>
+
+<p>
+  <strong>Lastnamepatient:</strong>
+  <%= @message.lastnamepatient %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @message.dob %>
+</p>
+
+<p>
+  <strong>Ethnicity:</strong>
+  <%= @message.ethnicity %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @message.gender %>
+</p>
+
+<p>
+  <strong>Icd10:</strong>
+  <%= @message.icd10 %>
+</p>
+
+<p>
+  <strong>Ndc11:</strong>
+  <%= @message.ndc11 %>
+</p>
+
+<p>
+  <strong>Evidence:</strong>
+  <%= @message.evidence %>
+</p>
+
+<p>
+  <strong>Nntval:</strong>
+  <%= @message.nntval %>
+</p>
+
+<p>
+  <strong>Servicedate:</strong>
+  <%= @message.servicedate %>
+</p>
+
+<p>
+  <strong>Servicepriority:</strong>
+  <%= @message.servicepriority %>
+</p>
+
+<p>
+  <strong>Servicesite:</strong>
+  <%= @message.servicesite %>
+</p>
+
+<p>
+  <strong>Firstnameordering:</strong>
+  <%= @message.firstnameordering %>
+</p>
+
+<p>
+  <strong>Lastnameordering:</strong>
+  <%= @message.lastnameordering %>
+</p>
+
+<p>
+  <strong>Npiordering:</strong>
+  <%= @message.npiordering %>
+</p>
+
+<p>
+  <strong>Phoneorering:</strong>
+  <%= @message.phoneorering %>
+</p>
+
+<p>
+  <strong>Emailordering:</strong>
+  <%= @message.emailordering %>
+</p>
+
+<p>
+  <strong>Mailordering:</strong>
+  <%= @message.mailordering %>
+</p>
+
+<p>
+  <strong>Clientid:</strong>
+  <%= @message.clientid %>
+</p>
+
+<p>
+  <strong>Planid:</strong>
+  <%= @message.planid %>
+</p>
+
+<p>
+  <strong>Planphone:</strong>
+  <%= @message.planphone %>
+</p>
+
+<p>
+  <strong>Planfax:</strong>
+  <%= @message.planfax %>
+</p>
+
+<p>
+  <strong>Memberid:</strong>
+  <%= @message.memberid %>
+</p>
+
+<p>
+  <strong>Patientid:</strong>
+  <%= @message.patientid %>
+</p>
+
+<p>
+  <strong>Authorization:</strong>
+  <%= @message.authorization %>
+</p>
+
+<p>
+  <strong>Preauth:</strong>
+  <%= @message.preauth %>
+</p>
+
+<p>
+  <strong>Seqid:</strong>
+  <%= @message.seqid %>
+</p>
+
+<p>
+  <strong>Senderid:</strong>
+  <%= @message.sender_id %>
+</p>
+
+<p>
+  <strong>Receiverid:</strong>
+  <%= @message.receiver_id %>
+</p>
+
+<% doctor_id = @message.sender_id %>
+<% @doctor = Doctor.find([doctor_id]) %>
+<%= link_to 'Doctor', doctor_path(@doctor) %>
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>

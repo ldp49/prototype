@@ -10,6 +10,9 @@ class DoctorsController < ApplicationController
   # GET /doctors/1
   # GET /doctors/1.json
   def show
+    @doctor = Doctor.find(params[:id])
+    doctor_id = @doctor.id
+    @messages = Message.where(["sender_id = ?", doctor_id])
   end
 
   # GET /doctors/new

@@ -1,0 +1,175 @@
+.notice{display:none;}
+.alert{display:none;}
+
+.navbar{
+padding:0px 0px 0px 32px;
+}
+
+.navbar-brand{
+padding: 10px 10px 10px 0px;
+}
+
+.right-gutter-border{
+  border-right-width: 1px;
+  border-right-style:solid;
+  border-right-color: #eee;
+}
+
+.left-gutter-border{
+  border-left-width: 1px;
+  border-left-style:solid;
+  border-left-color: #eee;
+}
+
+
+.btn-action{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+
+.btn-negative{
+  background-color: #D54937;
+}
+
+.gradeA:hover{
+  cursor: pointer;
+}
+
+
+.approved{
+  background-color: #CBF8B3;
+}
+
+.approved:hover{
+  background-color: #B7DA9B !important;
+}
+
+.denied{
+  background-color: #FF4D4E;
+}
+
+
+.denied:hover{
+  background-color: #D9534F !important;
+}
+
+th:hover{
+  cursor:pointer;
+}
+
+
+.active{
+  border-left-color: red;
+  border-left-style: solid;
+  font-weight: bold;
+}
+
+.filter-toggle{
+text-align: right;
+padding: 5px 0px;
+}
+
+.filter-toggle:hover{
+cursor: pointer;
+}
+
+.left-gutter-border-bold{
+  border-left-width: 1px;
+  border-left-style:solid;
+  border-left-color: #ddd;
+}
+
+.right-gutter-border-bold{
+  border-right-width: 1px;
+  border-right-style:solid;
+  border-right-color: #ddd;
+}
+.form-heading{
+  border-top-width: 1px;
+  border-top-style:solid;
+  border-top-color: #eee;
+  padding-top: 15px;
+  margin: 10px 0px 0px 0px;
+}
+.form-heading.form-top{
+  border-top-width: 1px;
+  border-top-style:none;
+}
+.modal-dialog{
+    width: 900px !important;
+}
+
+.modal .form-group{
+  margin: 15px 0px;
+}
+.modal .form-control{
+  border-width: 0px 0px 1px 0px;
+  border-radius: 0px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  height: 20px;
+  width: 100%;
+  border-color: #bbb;
+}
+.modal .form-control.fill-form{
+  display: inline-block;
+  overflow:hidden;
+}
+.modal .form-control:focus{
+  outline:none;
+  box-shadow:none;
+  -webkit-box-shadow:none;
+  border: 0px 0px 1px 0px;
+}
+
+.modal label,select{
+  float: left
+}
+.modal span {
+    display: block;
+    overflow: hidden;
+    padding: 0 4px 0 6px
+}
+
+.inactive{
+    display:none;
+}
+
+
+.page-header{
+  margin-top: 15px;
+}
+
+.sub-page-header{
+margin: 5px 5px 0px 0px;
+display:inline-block;
+}
+
+.search-wrapper{
+  width: 40%;
+}
+
+.master-search{
+  display:inline-block;
+  width: 75%;
+  float:left;
+  margin:0px;
+  padding: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius:0px;
+}
+
+.search-button{
+    height: 34px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    position:relative;
+    overflow: visible;
+    width: 25%;
+    right:5px;
+    float:right;
+    line-height: 20px;
+}

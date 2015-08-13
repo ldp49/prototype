@@ -1,0 +1,137 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :authnum %><br>
+    <%= f.number_field :authnum %>
+  </div>
+  <div class="field">
+    <%= f.label :firstnamepatient %><br>
+    <%= f.text_field :firstnamepatient %>
+  </div>
+  <div class="field">
+    <%= f.label :lastnamepatient %><br>
+    <%= f.text_field :lastnamepatient %>
+  </div>
+  <div class="field">
+    <%= f.label :dob %><br>
+    <%= f.date_select :dob %>
+  </div>
+  <div class="field">
+    <%= f.label :ethnicity %><br>
+    <%= f.number_field :ethnicity %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.number_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :icd10 %><br>
+    <%= f.text_field :icd10 %>
+  </div>
+  <div class="field">
+    <%= f.label :ndc11 %><br>
+    <%= f.text_field :ndc11 %>
+  </div>
+  <div class="field">
+    <%= f.label :evidence %><br>
+    <%= f.text_field :evidence %>
+  </div>
+  <div class="field">
+    <%= f.label :nntval %><br>
+    <%= f.number_field :nntval %>
+  </div>
+  <div class="field">
+    <%= f.label :servicedate %><br>
+    <%= f.date_select :servicedate %>
+  </div>
+  <div class="field">
+    <%= f.label :servicepriority %><br>
+    <%= f.number_field :servicepriority %>
+  </div>
+  <div class="field">
+    <%= f.label :servicesite %><br>
+    <%= f.number_field :servicesite %>
+  </div>
+  <div class="field">
+    <%= f.label :firstnameordering %><br>
+    <%= f.text_field :firstnameordering %>
+  </div>
+  <div class="field">
+    <%= f.label :lastnameordering %><br>
+    <%= f.text_field :lastnameordering %>
+  </div>
+  <div class="field">
+    <%= f.label :npiordering %><br>
+    <%= f.number_field :npiordering %>
+  </div>
+  <div class="field">
+    <%= f.label :phoneorering %><br>
+    <%= f.text_field :phoneorering %>
+  </div>
+  <div class="field">
+    <%= f.label :emailordering %><br>
+    <%= f.text_field :emailordering %>
+  </div>
+  <div class="field">
+    <%= f.label :mailordering %><br>
+    <%= f.text_field :mailordering %>
+  </div>
+  <div class="field">
+    <%= f.label :clientid %><br>
+    <%= f.text_field :clientid %>
+  </div>
+  <div class="field">
+    <%= f.label :planid %><br>
+    <%= f.text_field :planid %>
+  </div>
+  <div class="field">
+    <%= f.label :planphone %><br>
+    <%= f.text_field :planphone %>
+  </div>
+  <div class="field">
+    <%= f.label :planfax %><br>
+    <%= f.text_field :planfax %>
+  </div>
+  <div class="field">
+    <%= f.label :memberid %><br>
+    <%= f.text_field :memberid %>
+  </div>
+  <div class="field">
+    <%= f.label :patientid %><br>
+    <%= f.text_field :patientid %>
+  </div>
+  <div class="field">
+    <%= f.label :authorization %><br>
+    <%= f.number_field :authorization %>
+  </div>
+  <div class="field">
+    <%= f.label :preauth %><br>
+    <%= f.number_field :preauth %>
+  </div>
+  <div class="field">
+    <%= f.label :seqid %><br>
+    <%= f.number_field :seqid %>
+  </div>
+  <div class="field">
+    <%= f.label :sender_id %><br>
+    <%= f.number_field :sender_id %>
+  </div>
+  <div class="field">
+    <%= f.label :receiver_id %><br>
+    <%= f.number_field :receiver_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

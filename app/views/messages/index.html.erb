@@ -1,0 +1,85 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Messages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Authnum</th>
+      <th>Firstnamepatient</th>
+      <th>Lastnamepatient</th>
+      <th>Dob</th>
+      <th>Ethnicity</th>
+      <th>Gender</th>
+      <th>Icd10</th>
+      <th>Ndc11</th>
+      <th>Evidence</th>
+      <th>Nntval</th>
+      <th>Servicedate</th>
+      <th>Servicepriority</th>
+      <th>Servicesite</th>
+      <th>Firstnameordering</th>
+      <th>Lastnameordering</th>
+      <th>Npiordering</th>
+      <th>Phoneorering</th>
+      <th>Emailordering</th>
+      <th>Mailordering</th>
+      <th>Clientid</th>
+      <th>Planid</th>
+      <th>Planphone</th>
+      <th>Planfax</th>
+      <th>Memberid</th>
+      <th>Patientid</th>
+      <th>Authorization</th>
+      <th>Preauth</th>
+      <th>Seqid</th>
+      <th>Senderid</th>
+      <th>Receiverid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.authnum %></td>
+        <td><%= message.firstnamepatient %></td>
+        <td><%= message.lastnamepatient %></td>
+        <td><%= message.dob %></td>
+        <td><%= message.ethnicity %></td>
+        <td><%= message.gender %></td>
+        <td><%= message.icd10 %></td>
+        <td><%= message.ndc11 %></td>
+        <td><%= message.evidence %></td>
+        <td><%= message.nntval %></td>
+        <td><%= message.servicedate %></td>
+        <td><%= message.servicepriority %></td>
+        <td><%= message.servicesite %></td>
+        <td><%= message.firstnameordering %></td>
+        <td><%= message.lastnameordering %></td>
+        <td><%= message.npiordering %></td>
+        <td><%= message.phoneorering %></td>
+        <td><%= message.emailordering %></td>
+        <td><%= message.mailordering %></td>
+        <td><%= message.clientid %></td>
+        <td><%= message.planid %></td>
+        <td><%= message.planphone %></td>
+        <td><%= message.planfax %></td>
+        <td><%= message.memberid %></td>
+        <td><%= message.patientid %></td>
+        <td><%= message.authorization %></td>
+        <td><%= message.preauth %></td>
+        <td><%= message.seqid %></td>
+        <td><%= message.sender_id %></td>
+        <td><%= message.receiver_id %></td>
+        <td><%= link_to 'Show', message %></td>
+        <td><%= link_to 'Edit', edit_message_path(message) %></td>
+        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message', new_message_path %>

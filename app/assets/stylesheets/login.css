@@ -1,0 +1,11 @@
+
+/*Aligns the entire page to center*/
+body {
+text-align: center;
+margin: 0px;
+padding: 0px;
+}
+.right-gutter-border{
+  border-right-width: 1px;
+  border-style: solid;
+}
