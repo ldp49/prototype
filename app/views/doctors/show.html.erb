@@ -1,3 +1,7 @@
+<head>
+  <% javascript_include_tag "doctors.js" %>
+</head>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -37,9 +41,189 @@
     <!-- /.navbar-top-links -->
     <!-- /.sidebar-collapse -->
   </nav></div>
+<!-- /.navbar-static-side -->
 
 
- <div class="row">
+<div id="page-wrapper">
+
+  <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3>New Request</h3>
+        </div>
+          <div class="modal-body">
+            <%= form_for :message,  html:{ id:"user-form"}, url: messages_path do |f| %>
+            <div class="row" id="authEngine">
+              <div class="col-md-6">
+                <h4 class="form-heading form-top">Patient Information</h4>
+                <div class="form-group">
+                  <label>Last Name:
+                  </label>
+                  <span><input class="form-control fill-form" name="p_Lname" autofocus="true"/></span>
+                </div>
+                <div class="form-group">
+                  <label>First Name:
+                  </label>
+                  <span><input class="form-control fill-form" name="p_Fname" autofocus="true"/></span>
+                </div>
+                <div class="form-group">
+                  <label>Birthdate:</label>
+                  <span><input type="date" class="form-control" name="p_birthdate" value=""/></span>
+                </div>
+              </div>
+              <div class="col-md-6 left-gutter-border">
+                <h4 class="form-heading form-top">Diagnostic Attributes</h4>
+
+                  <div class="form-group">
+                    <label>Primary Diagnosis:</label>
+                              <span><select class="form-control" name="diagnosis">
+                                <option>Type 1</option>
+                                <option>Type 2</option>
+                                <option>Type 3</option>
+                              </select></span>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                <h4 class="form-heading">Treatment Select</h4>
+                <div class="form-group treatmentContainer">
+
+                </div>
+              </div>
+            </div>
+            <div class="row inactive" id="authForm">
+
+              <div class="col-md-6">
+                <h4 class="form-heading form-top">Patient Information</h4>
+                <div class="form-group">
+                  <label>ID# or MRN:</label>
+                  <span><input class="form-control" name="ins_id" value=""></span>
+                </div>
+                <div class="form-group">
+                  <label>Insurance Name:
+                  </label>
+                  <span><input class="form-control fill-form" name="ins_Name" autofocus="true"/></span>
+                </div>
+                <div class="form-group">
+                  <label>Insurance Plan:
+                  </label>
+                  <span><input class="form-control fill-form" name="ins_Plan" autofocus="true"/></span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h4 class="form-heading form-top">Physician Information</h4>
+                <!-- Change this to a button or input when using this as a form -->
+                <div class="form-group">
+                  <label>First Name:</label>
+                  <span><input class="form-control" name="c_Fname"></span>
+                </div>
+                <div class="form-group">
+                  <label>Last Name:</label>
+                  <span><input class="form-control" name="c_Lname"></span>
+                </div>
+                <div class="form-group">
+                  <label>ID #:</label>
+                  <span><input class="form-control" name="c_id" value=""></span>
+                </div>
+                <div class="form-group">
+                  <label>Phone Number:</label>
+                  <span><input class="form-control" name="p_id" value=""></span>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <h4 class="form-heading"> Rendering Provider</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>ID#:</label>
+                      <span><input class="form-control" name="r_id" value=""></span>
+                    </div>
+                    <div class="form-group">
+                      <label>Name:</label>
+                      <span><input class="form-control" name="r_name"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Role:</label>
+                      <span><input class="form-control" name="r_role"></span>
+                    </div>
+                    <div class="form-group">
+                      <label>Speciality:</label>
+                      <span><input class="form-control" name="s_type" value=""></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <h4 class="form-heading">Care Rendered</h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Request Type:</label>
+                      <span><input class="form-control" name="req_type"></span>
+                    </div>
+                    <div class="form-group">
+                      <label>Level of Care:</label>
+                            <span><select class="form-control" name="serv_level">
+                              <option>Elective</option>
+                              <option>Urgent</option>
+                              <option>Emergency</option>
+                            </select></span>
+                    </div>
+                    <div class="form-group">
+                      <label>Service Date:</label>
+                      <span><input type="date" class="form-control" name="serv_date" value=""></span>
+                    </div>
+                    <div class="form-group">
+                      <label>Number of Visits:</label>
+                      <span><input class="form-control" type="number" name="serv_site" value=""></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Site of Service:</label>
+                      <span><input class="form-control" name="serv_site" value=""></span>
+                    </div>
+                    <div class="form-group">
+                      <label>Admission Date:</label>
+                      <span><input type="date" class="form-control" name="admit_date" value=""></span>
+                    </div>
+                    <div class="form-group">
+                      <label>Diagnosis Code:</label>
+                      <span><input class="form-control" name="serv_site" value=""></span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <div id="authButtons">
+              <button type="button" id="authTransition" class="btn btn-default btn-primary">Next</button>
+              <button id="earlyCancelModal" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            <div id="submitButtons" class="inactive">
+              <%= f.submit id:"addRequest", class:"btn btn-default btn-primary" %>
+              <button id="backTransition" type="button" class="btn btn-default">Back</button>
+              <button id="closeModal" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="row">
     <div class="col-lg-12 page-header">
       <div class="row">
         <div class="col-sm-1">
@@ -60,9 +244,7 @@
       <!-- /.panel-heading -->
       <div class="row">
         <div class="col-sm-1 right-gutter-border-bold full-sidebar">
-          <!-- <button class="btn btn-sm btn-primary btn-action" data-toggle="modal" data-target="#myModal">New Request</button> -->
-          <a href="/messages/new"><button class="btn btn-sm btn-primary btn-action">New Request</button></a>
-
+          <button class="btn btn-sm btn-primary btn-action" data-toggle="modal" data-target="#myModal">New Request</button>
           <div class="filter-toggle active" id="allReqs">All Requests <span id="all-num"></span></div>
           <div class="filter-toggle" id="appReqs">In Progress</div>
           <div class="filter-toggle" id="appReqs">Approved</div>
@@ -79,18 +261,19 @@
               </tr>
             </thead>
 
-          <tbody>
-          <% @messages.each do |m| %>
-          <tr>
+            <tbody>
+              <% @messages.each do |m| %>
+                <tr>
                   <td><%= m.authnum %></td>
                   <td><%= m.sender_id %></td>
               <% end %>
             </tbody>
-          </table>
+          </table>        
         </div>
       </div>
     </div>
   </div>
+</div>     
 <%= link_to 'New Message', new_message_path %>
 
 <%= link_to 'Edit', edit_doctor_path(@doctor) %> |
