@@ -28,8 +28,9 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        doctor_id = @message.sender_id
+        @doctor = Doctor.find(doctor_id)
+        format.html { redirect_to @doctor, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }
