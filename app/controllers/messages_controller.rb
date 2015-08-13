@@ -28,7 +28,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        
+
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render :show, status: :created, location: @message }
       else
@@ -60,6 +60,24 @@ class MessagesController < ApplicationController
       format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def approve
+    @message = Message.find(params[:id])
+    insurer_id = @message.receiver_id
+    @message.authorization = 1
+    @insurer = Insurer.find(insurer_id)
+    @message.save
+    redirect_to @insurer
+  end
+
+  def deny
+    @message = Message.find(params[:id])
+    insurer_id = @message.receiver_id
+    @message.authorization = 0
+    @insurer = Insurer.find(insurer_id)
+    @message.save
+    redirect_to @insurer
   end
 
   private

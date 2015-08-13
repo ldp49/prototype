@@ -17,6 +17,9 @@
 <tr>
         <td><%= m.authnum %></td>
         <td><%= m.sender_id %></td>
+        <td><%= link_to 'approve', controller: "messages", action:"approve", id: m.id %>
+        <td><%= link_to 'deny', controller: "messages", action:"deny", id: m.id %>
+
     <% end %>
   </tbody>
 </table>

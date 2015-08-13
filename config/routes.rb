@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'static#index'
+  get 'messages/approve/:id' => 'messages#approve'
+  get 'messages/deny/:id' => 'messages#deny'
+
 
 
   # Example of regular route:
